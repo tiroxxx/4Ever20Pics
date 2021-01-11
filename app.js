@@ -22,6 +22,7 @@ form.addEventListener("submit", e => {
 function search(keyword) {
     const queryUrl = `https://www.flickr.com/services/rest/?method=flickr.photos.search&
     api_key=ed2a2cba48899d60bb6a0f1905f5903a&safe_search=3&per_page=20&format=json&text=${keyword}`;
+    body.textContent = "";
 
     axios.get(queryUrl)
         .then(res => {
