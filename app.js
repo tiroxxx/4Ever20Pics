@@ -1,3 +1,4 @@
+
 const body = document.querySelector("#body");
 const button = document.querySelector("#button");
 const form = document.querySelector("#form");
@@ -6,15 +7,18 @@ const imageUrl = "https://live.staticflickr.com/";
 
 button.addEventListener("click", e => {
     e.preventDefault();
-    console.log(formInput.value);
-    search(formInput.value);
+    if(formInput.value !== ""){
+      search(formInput.value);  
+    }
+    else {
+        alert
+    }
     formInput.value = "";
-    
+
 });
 
 form.addEventListener("submit", e => {
     e.preventDefault();
-    console.log(formInput.value);
     search(formInput.value);
     formInput.value = "";
 });
@@ -31,7 +35,6 @@ function search(keyword) {
             const trimmedResponse = rawResponse.split("jsonFlickrApi").pop();
             const jsonResponse = JSON.parse(trimmedResponse.substring(1, trimmedResponse.length - 1))
             const photos = jsonResponse.photos.photo;
-            console.log(photos);
             // append all pictures to the page
             photos.forEach(photo => {
                 const image = document.createElement("img");
@@ -39,7 +42,15 @@ function search(keyword) {
                 image.setAttribute("alt", photo.title);
                 body.append(image);
             });
-        })
+        }).catch(err => {
+            if (err) throw err;
+        });
+}
+
+function errorHandler() {
+    const message = document.createElement("p");
+    message.textContent = "Please fill in the blank";
+
 }
 
 
