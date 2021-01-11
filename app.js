@@ -7,20 +7,33 @@ const imageUrl = "https://live.staticflickr.com/";
 
 button.addEventListener("click", e => {
     e.preventDefault();
-    if(formInput.value !== ""){
-      search(formInput.value);  
+    if (formInput.value === "") {
+        // show error message
+        errorHandler();
     }
     else {
-        alert
+        search(formInput.value);
+        formInput.value = "";
+        // checking if error message is still there
+        if (form.contains(document.querySelector(".alert"))) {
+            form.removeChild(document.querySelector(".alert"));
+        }
     }
-    formInput.value = "";
-
 });
 
 form.addEventListener("submit", e => {
     e.preventDefault();
-    search(formInput.value);
-    formInput.value = "";
+    if (formInput.value === "") {
+        errorHandler();
+    }
+    else {
+        search(formInput.value);
+        formInput.value = "";
+        // checking if error message is still there
+        if (form.contains(document.querySelector(".alert"))) {
+            form.removeChild(document.querySelector(".alert"));
+        }
+    }
 });
 
 function search(keyword) {
@@ -48,9 +61,11 @@ function search(keyword) {
 }
 
 function errorHandler() {
-    const message = document.createElement("p");
+    const message = document.createElement("div");
     message.textContent = "Please fill in the blank";
-
+    message.setAttribute("class", "alert alert-danger text-center");
+    message.setAttribute("role", "alert");
+    form.append(message);
 }
 
 
