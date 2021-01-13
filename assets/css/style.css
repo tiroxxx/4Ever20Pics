@@ -8,6 +8,11 @@ img {
     background: none;
 }
 
+::placeholder {
+    color: #e48210;
+    opacity: 1;
+}
+
 #input:focus {
     outline: none;
 }

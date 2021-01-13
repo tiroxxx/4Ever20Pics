@@ -44,16 +44,16 @@ function search(keyword) {
 
             // append all pictures to the page
             photos.forEach(photo => {
-                const col = document.createElement("div");
-                const row = document.createElement("div");
+                // const col = document.createElement("div");
+                // const row = document.createElement("div");
                 const image = document.createElement("img");
-                col.setAttribute("class", "col p-0");
-                row.setAttribute("class", "row");
+                // col.setAttribute("class", "col p-0");
+                // row.setAttribute("class", "row");
                 image.setAttribute("src", `${imageUrl}${photo.server}/${photo.id}_${photo.secret}.jpg`);
                 image.setAttribute("alt", photo.title);
-                body.append(row);
-                row.append(col);
-                col.append(image)
+                body.append(image);
+                // row.append(col);
+                // col.append(image)
             });
         }).catch(err => {
             if (err) throw err;
