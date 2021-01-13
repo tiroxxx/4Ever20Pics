@@ -26,10 +26,10 @@ img {
 
 #nav-title {
     position: absolute;
-    top: 30%;
-    left: 20%;
+    top: 20%;
+    left: 18%;
     z-index: 1;
-    font-size: 5rem;
+    font-size: 550%;
     font-weight: bolder;
     font-family: verdana, sans-serif;
     color: #c85011;
@@ -40,7 +40,7 @@ img {
     top: 70%;
     left: 23%;
     z-index: 1;
-    font-size: 2rem;
+    font-size: 200%;
     font-weight: bolder;
     font-family: verdana, sans-serif;
     color: #ed6e14;
@@ -51,4 +51,8 @@ img {
     position: sticky;
     z-index: 1;
     top: 5%;
+}
+
+#body {
+    width: 100%;
 }
