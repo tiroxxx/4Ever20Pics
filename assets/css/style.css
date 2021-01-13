@@ -33,7 +33,7 @@ img {
     font-weight: bolder;
     font-family: verdana, sans-serif;
     color: #c85011;
-    text-shadow: 2px 2px 5px black;
+    text-shadow: 2px 8px 5px black;
 }
 #nav-description {
     position: absolute;
@@ -44,7 +44,7 @@ img {
     font-weight: bolder;
     font-family: verdana, sans-serif;
     color: #ed6e14;
-    text-shadow: 2px 2px 5px black;
+    text-shadow: 2px 8px 5px black;
 }
 
 #form-space {
@@ -58,11 +58,21 @@ img {
 }
 
 @media only screen and (max-width: 768px) {
+    #nav {
+        overflow: hidden;
+    }
     #nav-title {
-        font-size: 100%;
+        font-size: 150%;
+        left: 30%;
+        top: 20%;
     }
     #nav-description {
-        left: 15%;
-        font-size: 50%;
+        top: 60%;
+        right: 20%;
+        font-size: 100%;
+        text-align: center;
+    }
+    #nav-image {
+        width: 300%;
     }
 }
