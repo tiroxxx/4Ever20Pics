@@ -20,6 +20,7 @@ button.addEventListener("click", e => {
 form.addEventListener("submit", e => {
     e.preventDefault();
     if (formInput.value === "") {
+        // show error message
         errorHandler();
     }
     else {
@@ -44,16 +45,10 @@ function search(keyword) {
 
             // append all pictures to the page
             photos.forEach(photo => {
-                // const col = document.createElement("div");
-                // const row = document.createElement("div");
                 const image = document.createElement("img");
-                // col.setAttribute("class", "col p-0");
-                // row.setAttribute("class", "row");
                 image.setAttribute("src", `${imageUrl}${photo.server}/${photo.id}_${photo.secret}.jpg`);
                 image.setAttribute("alt", photo.title);
                 body.append(image);
-                // row.append(col);
-                // col.append(image)
             });
         }).catch(err => {
             if (err) throw err;
