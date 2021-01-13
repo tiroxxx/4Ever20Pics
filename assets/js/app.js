@@ -47,7 +47,7 @@ function search(keyword) {
                 const col = document.createElement("div");
                 const row = document.createElement("div");
                 const image = document.createElement("img");
-                col.setAttribute("class", "col");
+                col.setAttribute("class", "col p-0");
                 row.setAttribute("class", "row");
                 image.setAttribute("src", `${imageUrl}${photo.server}/${photo.id}_${photo.secret}.jpg`);
                 image.setAttribute("alt", photo.title);
