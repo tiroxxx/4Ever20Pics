@@ -56,3 +56,13 @@ img {
 #body {
     width: 100%;
 }
+
+@media only screen and (max-width: 768px) {
+    #nav-title {
+        font-size: 100%;
+    }
+    #nav-description {
+        left: 15%;
+        font-size: 50%;
+    }
+}
