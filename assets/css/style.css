@@ -65,12 +65,15 @@ img {
         font-size: 150%;
         left: 30%;
         top: 20%;
+        text-shadow: 2px 3px 3px black;
     }
     #nav-description {
         top: 60%;
         right: 20%;
         font-size: 100%;
         text-align: center;
+        text-shadow: 2px 3px 3px black;
+
     }
     #nav-image {
         width: 300%;
