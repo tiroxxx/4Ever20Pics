@@ -1,0 +1,5 @@
+#form-space {
+    position: sticky;
+    z-index: 1;
+    top: 5%;
+}

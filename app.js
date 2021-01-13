@@ -14,10 +14,6 @@ button.addEventListener("click", e => {
     else {
         search(formInput.value);
         formInput.value = "";
-        // checking if error message is still there
-        if (form.contains(document.querySelector(".alert"))) {
-            form.removeChild(document.querySelector(".alert"));
-        }
     }
 });
 
@@ -29,16 +25,13 @@ form.addEventListener("submit", e => {
     else {
         search(formInput.value);
         formInput.value = "";
-        // checking if error message is still there
-        if (form.contains(document.querySelector(".alert"))) {
-            form.removeChild(document.querySelector(".alert"));
-        }
     }
 });
 
 function search(keyword) {
     const queryUrl = `https://www.flickr.com/services/rest/?method=flickr.photos.search&
-    api_key=ed2a2cba48899d60bb6a0f1905f5903a&safe_search=3&per_page=20&format=json&text=${keyword}`;
+    api_key=ed2a2cba48899d60bb6a0f1905f5903a&safe_search=1&per_page=20&format=json&text=${keyword}`;
+    // empty page after every search
     body.textContent = "";
 
     axios.get(queryUrl)
@@ -48,6 +41,7 @@ function search(keyword) {
             const trimmedResponse = rawResponse.split("jsonFlickrApi").pop();
             const jsonResponse = JSON.parse(trimmedResponse.substring(1, trimmedResponse.length - 1))
             const photos = jsonResponse.photos.photo;
+
             // append all pictures to the page
             photos.forEach(photo => {
                 const image = document.createElement("img");
@@ -66,6 +60,10 @@ function errorHandler() {
     message.setAttribute("class", "alert alert-danger text-center");
     message.setAttribute("role", "alert");
     form.append(message);
+    // after 2 seconds remove error message
+    setTimeout(() => {
+        form.removeChild(document.querySelector(".alert"))
+    }, 2000)
 }
 
 
