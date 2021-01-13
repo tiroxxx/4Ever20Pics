@@ -1,3 +1,4 @@
+console.log("work");
 body.addEventListener("scroll", () => {
     console.log("worked?");
     console.log(body.scrollTop);
