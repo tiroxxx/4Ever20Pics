@@ -2,7 +2,7 @@
   ## Link
   https://tiroxxx.github.io/4Ever20Pics/
 
-  ![Screenshot](./assets/images/screenshot.PNG)
+  ![Screenshot](assets/images/screenshot.PNG)
 
   ## Description 
   Type in a keyword and 20 related pictures will be displayed at max width.
