@@ -8,11 +8,15 @@
   Type in a keyword and 20 related pictures will be displayed at max width.
   ## Table of Contents
   
+  * [Description](#description)
+  * [Technologies](#technologies)
   * [Credits](#credits)
   * [License](#license)
   * [Tests](#tests)
   * [Questions](#questions)
   
+  ## Technologies
+  HTML, CSS, JavaScript, Bootstrap, Axios.
 
   ## Credits
   Contributors: Christian Marquez
